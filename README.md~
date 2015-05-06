@@ -2,8 +2,8 @@
 ###Snapshot Crawler can be used to make a HTML Snapshot of an AJAX Web Site for Example if build with GWT.
 This project uses [HTMLUnit](http://htmlunit.sourceforge.net/) to generate a HTML Snapshot of AJAX Websites that are asynchronously loaded using JavaScript.<br/>
 Using Snapshot Crawler help you to precalculate the response for the Google robots accessing your Website trought "?_escaped_fragment_=". See the documentation [here](https://developers.google.com/webmasters/ajax-crawling/docs/specification).<br/>
-You can simply pass an [XML Sitemap}(https://support.google.com/webmasters/answer/183668?hl=en) as an argument and all URLs insight the "&lt;loc&gt;" are retreived and snapshotted.<br/>
-
+You can simply pass an [XML Sitemap](https://support.google.com/webmasters/answer/183668?hl=en) as an argument and all URLs insight the "&lt;loc&gt;" Tag are retreived and snapshotted.<br/>
+It also automatically calls your Webserver with a POST call containing the calculated HTML snapshot.
 
 
 ##Usage Examples

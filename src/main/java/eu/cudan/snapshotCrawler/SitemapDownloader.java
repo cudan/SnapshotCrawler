@@ -39,10 +39,10 @@ public class SitemapDownloader {
 			return true;
 
 		} catch (MalformedURLException e) {
-			System.out.println("ERROR: Problem downloading Sitemap");
+			System.err.println("ERROR: Problem downloading Sitemap");
 			return false;
 		} catch (IOException e) {
-			System.out.println("ERROR: Problem downloading Sitemap");
+			System.err.println("ERROR: Problem downloading Sitemap");
 			return false;
 		}
 	}

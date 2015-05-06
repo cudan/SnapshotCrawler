@@ -2,6 +2,7 @@ package eu.cudan.snapshotCrawler;
 
 public class ParameterSet {
 	private  String sitemap="";
+	private String addurloption="";
 	private  String url="";
 	private  String outPath="";
 	private  String postUrl="";
@@ -15,6 +16,14 @@ public class ParameterSet {
 	}
 	public void setSitemap(String sitemap) {
 		this.sitemap = sitemap;
+	}
+	
+	
+	public String getAddurloption() {
+		return addurloption;
+	}
+	public void setAddurloption(String addurloption) {
+		this.addurloption = addurloption;
 	}
 	public String getUrl() {
 		return url;

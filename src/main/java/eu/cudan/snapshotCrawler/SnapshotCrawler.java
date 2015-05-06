@@ -2,7 +2,7 @@ package eu.cudan.snapshotCrawler;
 
 public class SnapshotCrawler {
 
-	private static ParameterSet param;
+	private static ParameterSet param=new ParameterSet();
 	static int numberOfThreads = 0;
 
 	public static void main(String[] args) {
@@ -33,7 +33,16 @@ public class SnapshotCrawler {
 				System.out.println("Starting Thread Nr.:" + numberOfThreads);
 				System.out.println("Making Snapshot of Sitemap: "
 						+ sitemapDownloader.getLinkList().get(i));
-				Runnable r = new HTMLSnapshotThread(param, sitemapDownloader
+				
+				Callback c=new Callback() {
+					
+					@Override
+					public void callback() {
+						numberOfThreads--;
+					}
+				};
+				
+				Runnable r = new HTMLSnapshotThread(c,param, sitemapDownloader
 						.getLinkList().get(i));
 				new Thread(r).start();
 
@@ -54,30 +63,23 @@ public class SnapshotCrawler {
 	private static void snapshotURL() {
 		if (!param.getUrl().isEmpty()) {
 			System.out.println("Making Snapshot of URL: " + param.getUrl());
-			Runnable r = new HTMLSnapshotThread(param, param.getUrl());
+			
+			Callback c=new Callback() {
+				
+				@Override
+				public void callback() {
+					numberOfThreads--;
+				}
+			};
+			
+			Runnable r = new HTMLSnapshotThread(c,param, param.getUrl());
 			new Thread(r).start();
+			
+			
 		}
 
 	}
 
-	public static class HTMLSnapshotThread implements Runnable {
-
-		private ParameterSet params;
-		private String url;
-
-		public HTMLSnapshotThread(ParameterSet params, String url) {
-			this.params = params;
-			this.url = url;
-		}
-
-		public void run() {
-			HtmlSnapshotter snapshotter = new HtmlSnapshotter(params, url);
-			PostCommitter poster = new PostCommitter(params,
-					snapshotter.getUrl(), snapshotter.getHtmlSnapshot());
-
-			numberOfThreads--;
-		}
-	}
 
 	private static void analyzeArgs(String[] args) {
 
@@ -92,6 +94,11 @@ public class SnapshotCrawler {
 					case "--sitemap":
 						param.setSitemap(args[++i]);
 						break;
+
+					case "--addurloption":
+						param.setAddurloption(args[++i]);
+						break;
+						
 					case "--url":
 						param.setUrl(args[++i]);
 						break;
@@ -119,15 +126,17 @@ public class SnapshotCrawler {
 						break;
 
 					default:
-						break;
+						System.err.println("ERROR: Invalid Arguments");
+						printHelp();
+						return;
 					}
 				}
 			} catch (NumberFormatException e) {
-				System.out.println("ERROR: Arguments wrong");
+				System.err.println("ERROR: Arguments wrong");
 				printHelp();
 			}
 		} else {
-			System.out.println("ERROR: Arguments needed");
+			System.err.println("ERROR: Arguments needed");
 			printHelp();
 		}
 

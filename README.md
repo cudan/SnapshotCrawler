@@ -2,8 +2,8 @@
 ###Snapshot Crawler can be used to make a HTML Snapshot of an AJAX Web Site for Example if build with GWT.
 This project uses [HTMLUnit](http://htmlunit.sourceforge.net/) to generate a HTML Snapshot of AJAX Websites that are asynchronously loaded using JavaScript.<br/>
 Using Snapshot Crawler help you to precalculate the response for the Google robots accessing your Website trought "?_escaped_fragment_=". See the documentation [here](https://developers.google.com/webmasters/ajax-crawling/docs/specification).<br/>
-You can simply pass an [XML Sitemap}(https://support.google.com/webmasters/answer/183668?hl=en) as an argument and all URLs insight the "&lt;loc&gt;" are retreived and snapshotted.<br/>
-It also automatically calls your Webserver with a POST call comtaining calculated HTML Snapshot.
+You can simply pass an [XML Sitemap](https://support.google.com/webmasters/answer/183668?hl=en) as an argument and all URLs insight the "&lt;loc&gt;" Tag are retreived and snapshotted.<br/>
+It also automatically calls your Webserver with a POST call containing the calculated HTML snapshot.
 
 
 ##Usage Examples
@@ -37,6 +37,7 @@ Usage: java -jar snapshotCrawler.jar [OPTION]... [SITEMAP-LINK]... [POST-LINK]
 | ---------------------|--------------|
 | --help               | Display this help  |
 | --sitemap            | http URL to an XML Sitemap  |
+| --addurloption       | Appends to every URL called from the sitemap. Useful to pass special Options to the website.|
 | --url                | http URL to make a HTML shapshot  |
 | --outpath            | Path, where the snapshots are saved |
 | --posturl            | Followed by the path where the HTML Snapshot is POSTED<br>$_POST[link] contains the retreived Website<br>$_POST[html] the HTML Snapshot itself--outdir<br>Followed by the folder, where the snapshots are saved locally |

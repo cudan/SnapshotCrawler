@@ -23,8 +23,8 @@ public class PostCommitter {
 		this.param = param;
 		this.url = url;
 		this.htmlSnapshot = htmlSnapshot;
-		
-		callUrlWithPost();
+		if(!param.getPostUrl().isEmpty())
+			callUrlWithPost();
 	}
 
 	private void callUrlWithPost() {
@@ -51,7 +51,7 @@ public class PostCommitter {
 			    }
 			}
 		} catch (Exception e) {
-			System.out.println("An Error occured while uploading to POST Server");
+			System.err.println("ERROR: Occured while uploading to POST Server");
 			e.printStackTrace();
 		}
 		
