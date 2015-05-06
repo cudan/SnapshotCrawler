@@ -9,10 +9,7 @@ OPTIONS:
 | -----------|--------------|
 | --help               | Display this help  |
 | --sitemap            | Followed by an XML Sitemap  |
-| --postlink           | Followed by the path where the HTML Snapshot is POSTED  |
-                       | $_POST[link] contains the retreived Website
-                       $_POST[html] the HTML Snapshot itself--outdir
-                       Followed by the folder, where the snapshots are saved locally |
+| --postlink           | Followed by the path where the HTML Snapshot is POSTED<br>$_POST[link] contains the retreived Website<br>$_POST[html] the HTML Snapshot itself--outdir<br>Followed by the folder, where the snapshots are saved locally |
 | --log                | File, where log about work is saved  |
 | --compress           | Removes White Spaces in HTML Snapshot  |
 | --concurrent         | Number of Threads running contemporarily calculating the HTML Snapshots  |
