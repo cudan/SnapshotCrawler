@@ -4,7 +4,7 @@
 Usage: java -jar snapshotCrawler.jar [OPTION]... [SITEMAP-LINK]... [POST-LINK]
 
 Example 1: Creates a HTML snapshot of a single page<br>
-java -jar snapshotCrawler.jar --url http&#58;//www\.url-to-ajax-page.com --outpath /home/user/path-to-save-snapshots/ --log out.html --concurrent 10
+java -jar snapshotCrawler.jar --url ht<span>tp://</span>www.url-to-ajax-page.com --outpath /home/user/path-to-save-snapshots/ --log out.html --concurrent 10
 
 Example 2: Creates a HTML snapshot of all links found insight the XML sitemap. The format used is the <a href="https://support.google.com/webmasters/answer/183668?hl=en">Google Webmaster Tools sitemap</a>.<br>
 java -jar snapshotCrawler.jar --sitemap http&#58;//www\.url-to-xml-sitemap.com --outpath /home/user/path-to-save-snapshots/ --log out.html --concurrent 10
