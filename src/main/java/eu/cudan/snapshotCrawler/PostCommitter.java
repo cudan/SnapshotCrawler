@@ -13,12 +13,25 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 
+/**
+ * Calling an URL of your Web Server, where the HTML Snapshot is passed by POST method with supplementary Information
+ * 
+ * @author cudan
+ *
+ */
 public class PostCommitter {
 	
 	private ParameterSet param;
 	private String url;
 	private String htmlSnapshot;
 	
+	/**
+	 * Performing a POST Call to the server passed in the parameters
+	 * 
+	 * @param param Parameters and Settings
+	 * @param url wich was snapshotted
+	 * @param htmlSnapshot The HTML Snapshot
+	 */
 	public PostCommitter(ParameterSet param, String url, String htmlSnapshot) {
 		this.param = param;
 		this.url = url;
@@ -27,6 +40,9 @@ public class PostCommitter {
 			callUrlWithPost();
 	}
 
+	/**
+	 * Performing POST Call to Server
+	 */
 	private void callUrlWithPost() {
 		try {
 			HttpClient httpclient = HttpClients.createDefault();

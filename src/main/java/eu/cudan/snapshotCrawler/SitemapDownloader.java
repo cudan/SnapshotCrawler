@@ -8,16 +8,39 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Downloads an XML Sitemap and extract the URLs to make a snapshot.<br>
+	 * 
+	 * The passed XML should be build in this format:<br>
+	 * https://support.google.com/webmasters/answer/183668?hl=en
+ * 
+ * @author cudan
+ *
+ */
 public class SitemapDownloader {
 	List<String> linkList = new ArrayList<>();
 	ParameterSet param;
 	boolean isRetreiveSuccess = false;
 
+	/**
+	 * Downloads the XML Sitemap and retreives all URLs insight
+	 * 
+	 * @param param Parameters and Settings
+	 */
 	public SitemapDownloader(ParameterSet param) {
 		this.param = param;
 		isRetreiveSuccess = getSitemap();
 	}
 
+	
+	/**
+	 * Downloads an XML Sitemap and extract the URLs to make a snapshot.<br>
+	 * 
+	 * The passed XML should be build in this format:<br>
+	 * https://support.google.com/webmasters/answer/183668?hl=en
+	 * 
+	 * @return true, if the Sitemap was downloaded successfully
+	 */
 	private boolean getSitemap() {
 
 		try {
@@ -47,10 +70,16 @@ public class SitemapDownloader {
 		}
 	}
 
+	/**
+	 * @return List of URL insight the Sitemap
+	 */
 	public List<String> getLinkList() {
 		return linkList;
 	}
 
+	/**
+	 * @return true, if the Sitemap was Downloaded successfully
+	 */
 	public boolean isRetreiveSuccess() {
 		return isRetreiveSuccess;
 	}
