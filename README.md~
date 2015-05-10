@@ -37,6 +37,7 @@ Usage: java -jar snapshotCrawler.jar [OPTION]... [SITEMAP-LINK]... [POST-LINK]
 | ---------------------|--------------|
 | --help               | Display this help  |
 | --sitemap            | http URL to an XML Sitemap  |
+| --addurloption       | Appends to every URL called from the sitemap. Useful to pass special Options to the website.|
 | --url                | http URL to make a HTML shapshot  |
 | --outpath            | Path, where the snapshots are saved |
 | --posturl            | Followed by the path where the HTML Snapshot is POSTED<br>$_POST[link] contains the retreived Website<br>$_POST[html] the HTML Snapshot itself--outdir<br>Followed by the folder, where the snapshots are saved locally |

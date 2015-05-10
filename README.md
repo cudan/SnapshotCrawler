@@ -33,16 +33,16 @@ java -jar snapshotCrawler.jar --sitemap url-to-xml-sitemap.com --posturl your-se
 Usage: java -jar snapshotCrawler.jar [OPTION]... [SITEMAP-LINK]... [POST-LINK]
 
 
-| Option               | Description  |
-| ---------------------|--------------|
-| --help               | Display this help  |
-| --sitemap            | http URL to an XML Sitemap  |
-| --addurloption       | Appends to every URL called from the sitemap. Useful to pass special Options to the website.|
-| --url                | http URL to make a HTML shapshot  |
-| --outpath            | Path, where the snapshots are saved |
-| --posturl            | Followed by the path where the HTML Snapshot is POSTED<br>$_POST[link] contains the retreived Website<br>$_POST[html] the HTML Snapshot itself--outdir<br>Followed by the folder, where the snapshots are saved locally |
-| --log                | HTML Log File, where log about work is saved  |
-| --compress           | Removes White Spaces in HTML Snapshot  |
-| --concurrent         | Number of Threads running contemporarily calculating the HTML Snapshots. default 1 |
-| --waitchange         | Time to wait where JS execution is not changing the snapshot anymore. default 30s.  |
-| --deadline           | Deadline for Snapshot Thread in seconds. Default 120s. |
+| Option               				| Description  |
+| ----------------------------------------------|--------------|
+| --help               				| Display this help  |
+| --sitemap [URL]      				| http URL to an XML Sitemap  |
+| --addurloption [String]  			| Appends to every URL called from the sitemap. Useful to pass special Options to the website.|
+| --url [URL]                			| http URL to make a HTML shapshot  |
+| --outpath [path]           			| Path, where the snapshots are saved |
+| --posturl [URL]            			| Followed by the path where the HTML Snapshot is POSTED<br>$_POST[link] contains the retreived Website<br>$_POST[html] the HTML Snapshot itself--outdir<br>Followed by the folder, where the snapshots are saved locally |
+| --log [name]                			| HTML Log File, where log about work is saved  |
+| --compress            			| Removes White Spaces in HTML Snapshot  |
+| --concurrent [number of instances]         	| Number of Threads running contemporarily calculating the HTML Snapshots. default 1 |
+| --waitchange [seconds]        		| Time to wait where JS execution is not changing the snapshot anymore. default 30s.  |
+| --deadline [seconds]				| Deadline for Snapshot Thread in seconds. Default 120s. |
