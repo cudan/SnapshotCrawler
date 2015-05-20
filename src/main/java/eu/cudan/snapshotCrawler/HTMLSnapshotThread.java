@@ -57,7 +57,7 @@ for(int i=0;i<10;i++){
 
 		// Post to a Server if desired
 		PostCommitter poster = new PostCommitter(params, snapshotter.getUrl(),
-				snapshotter.getHtmlSnapshot());
+				htmlSnapshot);
 
 		this.c.callback();
 	}
