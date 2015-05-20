@@ -1,7 +1,7 @@
 #Snapshot Crawler
 
 
-[Download executable JAR](https://github.com/cudan/SnapshotCrawler/blob/master/bin/SnapshotCrawler.jar)
+[Download executable JAR](https://github.com/cudan/SnapshotCrawler/blob/master/bin/SnapshotCrawler.jar?raw=true)
 
 
 ###Snapshot Crawler can be used to make a HTML Snapshot of an AJAX Web Site for Example if build with GWT.
