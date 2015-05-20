@@ -36,11 +36,11 @@ Usage: java -jar snapshotCrawler.jar [OPTION]... [SITEMAP-LINK]... [POST-LINK]
 | Option               				| Description  |
 | ----------------------------------------------|--------------|
 | --help               				| Display this help  |
-| --sitemap [URL]      				| http URL to an XML Sitemap  |
+| --sitemap [URL]      				| http URL to an [XML Sitemap](https://support.google.com/webmasters/answer/183668?hl=en) |
 | --addurloption [String]  			| Appends to every URL called from the sitemap. Useful to pass special Options to the website.|
-| --url [URL]                			| http URL to make a HTML shapshot  |
-| --outpath [path]           			| Path, where the snapshots are saved |
-| --posturl [URL]            			| Followed by the path where the HTML Snapshot is POSTED<br>$_POST[link] contains the retreived Website<br>$_POST[html] the HTML Snapshot itself--outdir<br>Followed by the folder, where the snapshots are saved locally |
+| --url [URL]                			| http URL to make a single HTML shapshot  |
+| --outpath [path]           			| Path, where the snapshots are saved locally |
+| --posturl [URL]            			| Followed by the path where the HTML Snapshot is POSTED<br>$_POST[link] contains the retreived Website<br>$_POST[html] the HTML Snapshot itself--outdir |
 | --log [name]                			| HTML Log File, where log about work is saved  |
 | --compress            			| Removes White Spaces in HTML Snapshot  |
 | --concurrent [number of instances]         	| Number of Threads running contemporarily calculating the HTML Snapshots. default 1 |
