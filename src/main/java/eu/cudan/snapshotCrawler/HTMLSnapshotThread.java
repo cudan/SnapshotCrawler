@@ -66,7 +66,7 @@ for(int i=0;i<10;i++){
 		if(params.getOutPath().isEmpty()) return;
 		
 			try (PrintWriter out = new PrintWriter(new BufferedWriter(
-					new FileWriter(params.getOutPath()+"/"+URLEncoder.encode(url, "UTF-8") + "___SNAP.html", true)))) {
+					new FileWriter(params.getOutPath()+"/"+URLEncoder.encode(url, "UTF-8") + "___SNAP.html", false)))) {
 				out.println(htmlSnapshot);
 			} catch (IOException e) {
 				System.err.println("ERROR: Could not write to File");
