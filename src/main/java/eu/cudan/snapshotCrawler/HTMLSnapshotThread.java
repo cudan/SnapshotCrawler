@@ -82,7 +82,7 @@ for(int i=0;i<10;i++){
 			out.println(snapshotter.getSizeSnapshot() + "Bytes, "
 					+ snapshotter.getElapsedTime() + "s, "
 					+ snapshotter.getRepeatedTimes() + "x, "
-					+ snapshotter.getUrl());
+					+ snapshotter.getUrl()+ "<br />") ;
 		} catch (IOException e) {
 			System.err.println("ERROR: Could not write to Log File");
 		}
