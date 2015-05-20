@@ -10,7 +10,7 @@ public class SnapshotCrawler {
 	 */
 	public static void main(String[] args) {
 
-		analyzeArgs(args);		// Passing the Arguments to SnapshotCrawler
+		if(!analyzeArgs(args)) return;		// Passing the Arguments to SnapshotCrawler
 		snapshotURL();			// Make a Snapshot if a single URL is passed
 		snapshotSitemap();		// Make the Snapshots of all URL insight <loc> tag insight the XML sitemaps
 
@@ -103,7 +103,7 @@ public class SnapshotCrawler {
 	 * 
 	 * @param args: commandline arguments passed to the SnapshotCrawler
 	 */
-	private static void analyzeArgs(String[] args) {
+	private static boolean analyzeArgs(String[] args) {
 
 		if (args.length != 0) {
 			try {
@@ -113,7 +113,7 @@ public class SnapshotCrawler {
 					// print help to command line
 					case "--help":
 						printHelp();
-						return;
+						return false;
 
 					// Create HTML Snapshots of all urls insight the XML Sitemap
 					case "--sitemap":
@@ -169,17 +169,20 @@ public class SnapshotCrawler {
 					default:
 						System.err.println("ERROR: Invalid Arguments");
 						printHelp();
-						return;
+						return false;
 					}
 				}
 			} catch (NumberFormatException e) {
 				System.err.println("ERROR: Arguments wrong");
 				printHelp();
+				return false;
 			}
 		} else {
 			System.err.println("ERROR: Arguments needed");
 			printHelp();
+			return false;
 		}
+		return true;
 
 	}
 

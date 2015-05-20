@@ -56,7 +56,7 @@ public class SitemapDownloader {
 				linkList.add(matcher.group(2));
 			}
 
-			System.err.println("Sitemap downloaded. Items Nr.: "
+			System.out.println("\nSitemap downloaded. Items Nr.: "
 					+ linkList.size());
 
 			return true;
