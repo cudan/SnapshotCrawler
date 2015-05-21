@@ -46,6 +46,7 @@ for(int i=0;i<10;i++){
 		// Compress HTML if desired: remove white spaces etc.
 		if (params.isCompress()) {
 			HtmlCompressor compressor = new HtmlCompressor();
+			compressor.setPreserveLineBreaks(true);
 			htmlSnapshot = compressor.compress(htmlSnapshot);
 		}
 
