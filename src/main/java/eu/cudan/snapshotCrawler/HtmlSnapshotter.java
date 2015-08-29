@@ -88,7 +88,7 @@ public class HtmlSnapshotter {
 		final WebRequest webRequest = new WebRequest(urlToFetch);
 
 		// Headless browser HtmlUnit to obtain an HTML snapshot.
-		webClient = new WebClient(BrowserVersion.FIREFOX_31);
+		webClient = new WebClient(BrowserVersion.FIREFOX_38);
 		webClient.getCache().clear();
 
 		// Set Options fot headless browser
@@ -128,7 +128,7 @@ public class HtmlSnapshotter {
 				webClient.waitForBackgroundJavaScript(timeJavascriptTimeout);	
 			} catch (Exception e) {
 				// TODO: handle exception
-			}
+			} 
 			
 			
 			// Get Page Size
